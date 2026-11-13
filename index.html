@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#edf2ed"><title>Calm Paths · Your pace, your way</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<a class="skip" href="#main">Skip to activities</a>
+<header><a class="brand" href="#home" aria-label="Calm Paths home"><span class="brandmark" aria-hidden="true">⌁</span> Calm Paths</a><span class="tagline">Your pace. Your way.</span><button id="settingsButton" class="quiet">Comfort settings</button></header>
+<main id="main">
+<section id="home" class="view">
+  <div class="eyebrow">A SMALL SPACE TO EXPLORE</div><h1>One gentle step<br>at a time.</h1>
+  <p class="intro">Play with shapes, find a pattern, or plan what comes next.<br>There’s no timer. You can take a break whenever you want.</p>
+  <div class="sectiontitle"><h2>Choose your path</h2><span>Short activities · No sound · No rush</span></div>
+  <div class="cards">
+    <button class="activity" data-kind="pattern"><span class="art" aria-hidden="true">● △ ● △</span><span class="cardtag">NOTICE & EXPLORE</span><strong>Pattern garden</strong><span>Discover what comes next.</span><span class="start">Explore patterns <span aria-hidden="true">↗</span></span></button>
+    <button class="activity" data-kind="count"><span class="art" aria-hidden="true">● ●<br>● ●</span><span class="cardtag">COUNT AT YOUR PACE</span><strong>Little collections</strong><span>Count a few dots, one by one.</span><span class="start">Explore counting <span aria-hidden="true">↗</span></span></button>
+    <button class="activity" data-kind="match"><span class="art" aria-hidden="true">◇ &nbsp; ◇</span><span class="cardtag">LOOK & CONNECT</span><strong>Shape friends</strong><span>Find two shapes that match.</span><span class="start">Explore matching <span aria-hidden="true">↗</span></span></button>
+  </div>
+  <div class="routinepromo"><div><span class="eyebrow">MAKE THE NEXT STEP CLEAR</span><h2>A plan you can see.</h2><p>Choose a “first” and a “then” activity together.</p></div><button id="routineButton">Open routine board <span aria-hidden="true">→</span></button></div>
+  <p class="caregiver">For different ages and learning preferences. Adjust the challenge together in Comfort settings. This is practice and play, not an IQ test.</p>
+</section>
+<section id="play" class="view" hidden>
+  <div class="playtop"><button id="homeButton" class="quiet">← All activities</button><span id="roundLabel"></span></div>
+  <div class="progress" aria-hidden="true"><div id="progressFill"></div></div>
+  <div class="gamepanel"><span id="activityLabel" class="eyebrow"></span><h1 id="questionTitle" tabindex="-1"></h1><p>Look first. Then choose one answer below.</p><div id="stimulus" class="stimulus"></div><div id="answers" class="answers"></div>
+  <p id="feedback" class="feedback" aria-live="polite" aria-atomic="true"></p>
+  <div class="gameactions"><button id="hintButton" class="quiet">Show a hint</button><button id="skipButton" class="quiet">Skip this one</button><button id="nextButton" hidden>Next step →</button></div></div>
+</section>
+<section id="routine" class="view" hidden>
+  <button id="routineHome" class="quiet">← All activities</button><div class="eyebrow">A PREDICTABLE PLAN</div><h1>First this. Then that.</h1><p>Choose two activities together. You can change the plan at any time.</p>
+  <div class="routinegrid"><div class="routinecard"><span class="cardtag">FIRST</span><label for="firstChoice">Choose the first activity</label><select id="firstChoice"><option value="play">◇ Play a game</option><option value="water">◯ Drink water</option><option value="read">▤ Read together</option><option value="stretch">↟ Stretch</option><option value="quiet">☁ Quiet time</option></select><p id="firstStatus">Ready when you are.</p><button id="firstDone">First activity is finished</button></div><span class="arrow" aria-hidden="true">→</span><div class="routinecard"><span class="cardtag">THEN</span><label for="thenChoice">Choose the next activity</label><select id="thenChoice"><option value="quiet">☁ Quiet time</option><option value="play">◇ Play a game</option><option value="water">◯ Drink water</option><option value="read">▤ Read together</option><option value="stretch">↟ Stretch</option></select><p id="thenStatus" aria-live="polite">This comes next.</p><button id="thenDone" class="quiet">Then activity is finished</button></div></div>
+  <button id="resetRoutine" class="quiet">Start a fresh plan</button>
+</section>
+<section id="finished" class="view finishpanel" hidden><span class="finishicon" aria-hidden="true">✧</span><div class="eyebrow">A GOOD PLACE TO PAUSE</div><h1 id="finishTitle" tabindex="-1">Your steps are finished.</h1><p>You chose your own pace. You can explore again or be done for now.</p><button id="againButton">Choose another activity</button><button id="finishRoutine" class="quiet">Look at my routine</button></section>
+<aside class="communication" aria-label="Ways to communicate"><span>I can say…</span><button id="helpButton" class="quiet">✋ I need help</button><button id="breakButton" class="quiet">☁ I need a break</button><button id="doneButton" class="quiet">✓ I’m finished</button></aside><p id="message" class="message" role="status" aria-live="polite"></p>
+</main>
+<footer><span>Calm Paths</span><span>No account. No ads. No personal information collected.</span><a href="README.md">About this project</a></footer>
+<dialog id="settings"><form method="dialog"><button class="close quiet" aria-label="Close comfort settings">×</button><span class="eyebrow">MAKE IT FEEL RIGHT</span><h2>Comfort settings</h2><p>Start anywhere. Change anything. Age suggestions are optional, not ability ratings.</p>
+<label for="age">Optional starting suggestion</label><select id="age"><option value="custom">Choose by preference</option><option value="4-6">Ages 4–6 · gentle start</option><option value="7-10">Ages 7–10 · a little more</option><option value="11+">Ages 11+ / adults · more choices</option></select>
+<label for="difficulty">Challenge level</label><select id="difficulty"><option value="1">Gentle · 2 choices</option><option value="2">Growing · 3 choices</option><option value="3">Exploring · 4 choices</option></select>
+<label for="rounds">Steps in one activity</label><select id="rounds"><option value="3">3 steps</option><option value="5">5 steps</option><option value="8">8 steps</option></select>
+<label class="check"><input id="lowStim" type="checkbox" checked> Quieter colors</label><label class="check"><input id="largeText" type="checkbox"> Larger text</label><label class="check"><input id="remember" type="checkbox"> Remember these settings on this device</label><p class="small">No names, ages, diagnoses, or scores are saved. All play is untimed, with no sound or animation. Changes apply to the next activity.</p><button id="saveSettings" value="save">Save settings</button><button id="clearSettings" class="quiet" type="button">Clear saved settings</button></form></dialog>
+<dialog id="breakDialog"><span class="eyebrow">THERE IS NO RUSH</span><h2>A little space.</h2><p>Your activity is waiting. Rest, move, or ask someone you trust for help.</p><button id="returnButton">Return when I’m ready</button><button id="leaveBreak" class="quiet">Finish for now</button></dialog>
+<script type="module" src="app.mjs"></script></body></html>
