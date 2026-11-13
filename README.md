@@ -50,7 +50,7 @@ from the settings dialog. A web host may maintain ordinary access logs separatel
 ## Validation
 The engine suite checks 4,500 generated question configurations for deterministic
 output, unique choices and correct answers, plus session limits and duplicate
-answer protection. Browser checks cover the primary interaction flow. Usability
+answer protection. Browser interaction checks remain pending. Usability
 with autistic participants, assistive technology/device testing, translations,
 and clinical benefit have **not** been validated. Feedback should guide further
 development with consent and appropriate caregiver involvement.
